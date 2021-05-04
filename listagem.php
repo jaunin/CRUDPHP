@@ -42,12 +42,15 @@ $querycadastro = mysqli_query ($connect, $buscar);
                     
           ?>
               <tr>
+              <form action="editar.php" method="POST" enctype="multipart/form-data">   
                   <td scope="row"><?php echo $id;?></td>
-                  <td><?php echo $nome;?></td>
-                  <td><?php echo $telefone;?></td>
-                  <td><?php echo $email;?></td>
-                  <td>
-                  <form action="excluir.php" method="post">
+                  <td><input type="text" name="nome" value="<?php echo $nome; ?>"></td>
+                  <td><input type="text" name="telefone" value="<?php echo $telefone; ?>"></td>
+                  <td><input type="text" name="email" value="<?php echo $email; ?>"></td>
+                  <input type="hidden" name="id" value="<?php echo $id; ?>">
+                  <td><input type="submit" value="Editar"></td>
+                </form>
+                  <form action="excluir.php" method="POST">
                 <td><input type="hidden" name="id" value="<?php echo $id; ?>"></td>
                 <td><input type="submit" value="Excluir"></td>
             </form>
@@ -55,7 +58,7 @@ $querycadastro = mysqli_query ($connect, $buscar);
               </tr>
           <?php }; ?>    <!-- Parou o while -->
           <tr>
-            <form action="cadastro.php" method="post">
+            <form action="cadastro.php" method="POST">
                 <td></td>
                 <td><input type="text" name="nome"></td>
                 <td><input type="text" name="telefone"></td>
