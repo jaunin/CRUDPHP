@@ -42,7 +42,7 @@ $querycadastro = mysqli_query ($connect, $buscar);
                     
           ?>
               <tr>
-              <form action="editar.php" method="POST" enctype="multipart/form-data">   
+              <form action="editar.php" method="POST" enctype="multipart/form-data">   <!-- Pesquisar melhor essa parte -->
                   <td scope="row"><?php echo $id;?></td>
                   <td><input type="text" name="nome" value="<?php echo $nome; ?>"></td>
                   <td><input type="text" name="telefone" value="<?php echo $telefone; ?>"></td>
